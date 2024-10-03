@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #d15c18;
+    padding: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #555;
+    color: #16416b;
+    border-radius: 5px;
+}
+
+.scrolled .navbar {
+    background-color: #0d9f23;
+}
+
+section {
+    padding: 100px 20px;
+    margin-top: 60px;
+    height: 100vh;
+}
+
+#home {
+    background-color: #b9ad79;
+}
+
+#about {
+    background-color: #b9ad79;
+}
+
+#services {
+    background-color: #b9ad79;
+}
+
+#contact {
+    background-color: #b9ad79;
+}
+</style>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Home Section</h1>
+        <p>Welcome to the home section of the webpage.</p>
+    </section>
+    <section id="about">
+        <h1>About Section</h1>
+        <p>Information about the website or company.</p>
+    </section>
+    <section id="services">
+        <h1>Services Section</h1>
+        <p>Details about the services offered.</p>
+    </section>
+    <section id="contact">
+        <h1>Contact Section</h1>
+        <p>How to get in touch with us.</p>
+    </section>
+
+    <script>// Change navbar background when scrolling
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('header');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});</script>
+</body>
+</html>
